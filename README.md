@@ -11,7 +11,7 @@ An OpenFOAM solver to model enhancement of mixed convection heat transfer due to
 The developed solver handles governing equations in mixed convection heat transfer including continuity, momentum, energy, and electrical equations. The developed solver is able to handle the coupled equations. For a comprehensive understanding of this solver, see this [publication](https://doi.org/10.1016/j.elstat.2019.103415).
 
 # Target platform
-The code has been rigorously tested and verified to be fully compatible with OpenFOAM v-4.1, ensuring its smooth integration and reliable performance with this specific release.
+The code has been rigorously tested and verified to be fully compatible with OpenFOAM v2406, ensuring its smooth integration and reliable performance with this specific release.
 
 # How to compile and use the solver
 1- Download the source code using the following command:
