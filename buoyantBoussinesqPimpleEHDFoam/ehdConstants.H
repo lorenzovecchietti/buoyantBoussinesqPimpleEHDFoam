@@ -1,30 +1,37 @@
+#include "dimensionedScalar.H"
+#include "IOdictionary.H"
+#include "IOobject.H"
+
+// Creazione del dizionario EHDproperties
 IOdictionary EHDproperties
 (
-	IOobject
-	(
-		"EHDproperties",
-		runTime.constant(),
-		mesh,
-		IOobject::MUST_READ,
-		IOobject::NO_WRITE
-	)
+    IOobject
+    (
+        "EHDproperties",
+        runTime.constant(),
+        mesh,
+        IOobject::MUST_READ,
+        IOobject::NO_WRITE
+    )
 );
 
-dimensionedScalar rho0("rho0", dimMass/dimVolume, laminarTransport);
+// Dichiarazione delle variabili con inizializzazione aggiornata
+dimensionedScalar rho0
+(
+    "rho0", 
+    dimMass/dimVolume, 
+    laminarTransport
+);
 
-
-// Permitivity
+// Permittività
 dimensionedScalar epsilon0
 (
-	EHDproperties.lookup("epsilon0")
+    dimensionedScalar("epsilon0", EHDproperties)
 );
 
-// Ion mobility
-dimensionedScalar mobil
+// Mobilità ionica
+dimensionedScalar mobil 
 (
-	EHDproperties.lookup("mobil")
+    dimensionedScalar("mobil", EHDproperties)
 );
-
-
-
 
